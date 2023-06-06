@@ -12,11 +12,9 @@ public class fillForm {
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-    }
-
-    static {
         Configuration.pageLoadStrategy = "eager";
     }
+
     @Test
     void fillFormTest() {
         open("/text-box");
@@ -29,7 +27,7 @@ public class fillForm {
         $("#permanentAddress").setValue("Another address 1");
         $("#submit").click();
 
-        $("#output").shouldHave(text("Alex Egorov"), text("alex@egorov.com"),
-                text("Some address 1"), text("Another address 1"));
+        $("#output").shouldHave(text("Some address 1"), text("Alex Egorov"), text("alex@egorov.com"),
+                 text("Another address 1"));
     }
 }
